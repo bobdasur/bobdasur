@@ -1,3 +1,7 @@
+html {
+  scroll-behavior: smooth;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -68,6 +72,7 @@ body {
 .btn:hover {
   background: #fff;
   color: #243b55;
+  transform: scale(1.05);
 }
 
 .btn.light {
@@ -108,6 +113,15 @@ body {
 }
 
 /* PROJECTS */
+.card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+}
+
 .cards {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
@@ -132,4 +146,20 @@ footer {
   color: #aaa;
   text-align: center;
   padding: 15px;
+}
+
+.fade-in {
+  animation: fadeUp 1s ease forwards;
+  opacity: 0;
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
